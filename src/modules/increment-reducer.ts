@@ -4,7 +4,7 @@ const initialState = {
 	counter: 0
 }
 
-export default function (state = initialState, action: Action) {
+export function increment (state = initialState, action: Action) {
 	switch (action.type) { 
 		case 'INCREMENT':
 			let newState = Object.assign({}, state);

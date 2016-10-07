@@ -1,6 +1,6 @@
 import { combineReducers, Reducer } from 'redux'
-import increment from './increment-reducer'
+import { increment } from './increment-reducer'
 
-export default combineReducers({
+export var rootReducer = combineReducers({
   increment
 })

@@ -9,7 +9,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 //Redux - ReduxThunk - rootReducer
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk  from 'redux-thunk';
-import rootReducer from '../modules/rootReducer';
+import { rootReducer } from '../modules/rootReducer';
+
+//Action-creator
+//import increment from '../modules/increment-reducer'
+
 
 const appStore = createStore(
   rootReducer,
@@ -36,7 +40,7 @@ const appStore = createStore(
     TabsPage
   ],
   providers: [
-    { provide: 'AppStore', useValue: appStore }
+    { provide: 'AppStore', useValue: appStore },
   ]
 })
 export class AppModule {}
