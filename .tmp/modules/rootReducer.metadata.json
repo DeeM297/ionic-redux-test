@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":1,"metadata":{"rootReducer":{"__symbolic":"call","expression":{"__symbolic":"reference","module":"redux","name":"combineReducers"},"arguments":[{"increment":{"__symbolic":"reference","name":"increment"}}]}}}

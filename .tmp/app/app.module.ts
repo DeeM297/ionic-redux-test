@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 //Redux - ReduxThunk - rootReducer
-import { createStore, applyMiddleware } from 'redux';
+import { Store, createStore, applyMiddleware } from 'redux';
 import ReduxThunk  from 'redux-thunk';
 import { rootReducer } from '../modules/rootReducer';
 
@@ -15,10 +15,22 @@ import { rootReducer } from '../modules/rootReducer';
 //import increment from '../modules/increment-reducer'
 
 
-const appStore = createStore(
-  rootReducer,
-  applyMiddleware(ReduxThunk)
-);
+// const appStore = createStore(
+//   rootReducer,
+//   applyMiddleware(ReduxThunk)
+// );
+
+export function appStore(): any {
+  return createStore(
+            rootReducer,
+            applyMiddleware(ReduxThunk)
+          );
+};
+
+
+// export const rootReducer = combineReducers({
+//   increment
+// })
 
 @NgModule({
   declarations: [
@@ -40,7 +52,17 @@ const appStore = createStore(
     TabsPage
   ],
   providers: [
-    { provide: 'AppStore', useValue: appStore },
+    { provide: 'AppStore', useValue: appStore }
   ]
 })
-export class AppModule {}
+export class AppModule {
+
+  // constructor() {
+  //       //appRef.bootstrap(AppComponent)
+  //       // const appStore = createStore(
+  //       //   rootReducer,
+  //       //   applyMiddleware(ReduxThunk)
+  //       // );
+  //   }
+
+}
